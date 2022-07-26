@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
 
   constructor(private api: ApiService) {}
 
-  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.api.get('/recipes').subscribe(async (res) => {
       this.recipes = await res;
@@ -23,7 +22,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // tslint:disable-next-line:typedef
   selectRecipe(row) {
     this.selectedItem = row;
   }
