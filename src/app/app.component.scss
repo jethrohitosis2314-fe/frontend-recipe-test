@@ -1,0 +1,167 @@
+$color-white: #ffffff;
+$color-orange: #d1aa64;
+
+$font-nunito: 'Nunito Sans', sans-serif;
+$font-playfair: 'Playfair Display', serif;
+
+/* CUSTOMIZED SCROLL FOR CHROME
+----------------------------------------------- */
+.display-table {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    .display-table__cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.recipe {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #1f1f1f, #585858);
+
+    .recipe-container {
+        position: relative;
+        width: 95%;
+        height: 100%;
+        margin: auto;
+
+        .recipe-card {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 35%;
+            height: 90%;
+            border-radius: 20px;
+            background: $color-white;
+            box-shadow: -3px 0px 17px 10px #00000042;
+
+            .recipe-card-holder {
+                position: relative;
+                width: 95%;
+                margin: auto;
+                height: 100%;
+                padding-top: 1rem;
+                overflow-y: auto;
+
+                .recipe-card-items {
+                    display: inline-block;
+                    width: 30%;
+                    cursor: pointer;
+                    text-align: center;
+                    padding: 5px;
+                    vertical-align: top;
+                    
+                    img {
+                        width: 100px;
+                        object-fit: contain;
+                        border-radius: 5px;
+                        transition: all .3s linear;
+                    }
+                    p {
+                        width: 90px;
+                        margin: auto;
+                        margin-top: 0.5rem;
+                        color: #000;
+                        font-family: $font-nunito;
+                        transition: all .3s linear;
+                    }
+
+                    &:hover {
+                        img {
+                            box-shadow: 1px 1px 9px #000;
+                        }
+                        p {
+                            color: #878787;
+                        }
+                    }
+                }
+            }
+        }
+
+        .recipe-selected--image {
+            position: absolute;
+            top: 15%;
+            border-radius: 10px;
+            left: -10%;
+            right: 0;
+            object-fit: contain;
+            width: 24%;
+            margin: auto;
+            z-index: 2;
+            background: $color-orange;
+            padding: 10px;
+            box-shadow: 1px 1px 7px 5px #00000047;
+        }
+
+        .recipe-text-holder {
+            width: 40%;
+            margin-left: auto;
+        }
+
+        .recipe-text {
+            .title {
+                font-size: 4rem;
+                width: 350px;
+                margin-bottom: 2rem;
+                color: $color-white;
+                font-family: $font-playfair;
+            }
+            .desc {
+                color: $color-orange;
+                font-size: 1.25rem;
+                margin-bottom: 5rem;
+                font-family: $font-nunito;
+            }
+
+            .info {
+                overflow-y: auto;
+                height: 50vh;
+                width: 100%;
+
+                .info-title {
+                    color: $color-white;
+                    font-size: 1.5rem;
+                    margin-bottom: 2rem;
+                    font-family: $font-playfair;
+                }
+                .info-label {
+                    font-family: $font-nunito;
+                    margin-bottom: 1rem;
+                    font-size: 1rem;
+                        color: #c5c5c5;
+                    span {
+                        font-family: $font-nunito;
+                        font-size: 1rem;
+                        color: $color-white;
+                    }
+                }
+
+                .info-list {
+                    list-style: disc;
+                    li {
+                        color: $color-white;
+                        font-family: $font-nunito;
+                        padding-left: 1rem;
+                        margin-bottom: 1rem;
+
+                        i {
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 10px;
+                            height: 10px;
+                            margin-right: 0.5rem;
+                            border-radius: 50%;
+                            border: 2px solid $color-orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
